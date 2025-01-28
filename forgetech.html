@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home / X</title>
+  <link rel="shortcut icon" href="TwitterReplay/twitter (1).png" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <style>
+    .search {
+      margin-left: 5%;
+
+      position: relative;
+      width: 300px; /* Largura ajustável */
+    }
+
+    /* Estilo do input */
+    .search input[type="search"] {
+      margin-top: 20px;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px 40px; /* Espaço para o ícone da lupa */
+      border: 1px solid gray;
+      border-radius: 20px;
+      outline: none;
+      font-size: 16px;
+      color: white;
+      transition: border-color 0.3s ease; /* Animação suave ao focar */
+    }
+
+    /* Mudar borda ao focar */
+    .search input[type="search"]:focus {
+      border-color: #007bff; /* Azul quando focado */
+    }
+
+    /* Adicionar a lupa como um ícone */
+    .search::before {
+      content: "\f002"; /* Código do ícone da lupa do Font Awesome */
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 10px; /* Posição do ícone à esquerda */
+      top: 70%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #888; /* Cor do ícone */
+    }
+  .subscribe {   
+  margin: 5%;
+  height: 180px;
+  width: 70%;
+  border-radius: 6%;
+  border: 1px solid #aaa;
+  padding: 5%;
+  position: relative; /* Necessário para posicionamento do botão */
+}
+
+.whats {
+  margin: 5%;
+  height: 45%;
+  width: 70%;
+  padding: 5%;
+  border-radius: 6%;
+  border: 1px solid #aaa;
+  position: relative; /* Necessário para posicionamento do botão */
+}
+
+.subscribe button,
+.whats button {
+  border-radius: 25px;
+  height: 45px;
+  width: 95px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.subscribe button:hover{
+  background-color: #007bff;
+}
+
+.subscribe h3,
+.whats h3 {
+  margin: 3%;
+  font-weight: bold;
+  color: white;
+}
+
+.subscribe h5,
+.whats h5 {
+  margin: 2%;
+  color: white;
+}
+   
+.info-box {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+small{
+  color:gray;
+}
+.text{
+  background-color: transparent;
+}
+
+
+.info-box h4 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.options {
+  font-size: 5px;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.options:hover {
+  color: #1f202256;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+.see-more{
+  text-align: left;
+  color:#1da1f2;
+  margin-left: 8px;
+  text-decoration: none;
+
+}
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 0;
+      display: flex;
+      margin: 0;
+  }
+
+    #app {
+      width: 52%;
+      margin: 0;
+      background:black;
+      border-right: 1px solid gray;
+      overflow: scroll;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      background-color:black;
+      border-bottom: 1px solid gray;
+      color: white;
+      text-align: center;
+      padding: 0px 0;
+      height: 60px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;     
+    }
+
+    .folow a {
+      color: gray;
+      text-decoration: none;
+      padding: 10px;
+    }
+    
+    .you a{
+      bottom: 0;
+      text-decoration: none;
+      color: white;
+      border-bottom:3px solid #1da1f2;
+      padding: 10px;
+    
+    }
+    body {
+
+      background-color: #f0f0f0;
+      color: #333;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+#app {
+  width: 52%;
+  height: 100vh;
+  background: black;
+  border-right: 1px solid gray;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pl{
+  overflow-y: hidden;
+  height: 100vh;
+  background-color: black;
+  width: 13%;
+  border-right: 1px solid #aaa;
+} 
+
+.pd {
+  width:35%;
+  background-color: black;
+  overflow-y: hidden;
+  height: 100vh;
+  border-left: #aaa;
+}
+.folow{
+  width: 50%;
+
+}
+.folow label, .you label{
+  bottom: 0;
+}
+.you{
+  width: 50%;
+  
+}
+.you:hover , .folow:hover{
+  background-color: #f0f0f017;
+}
+
+
+    #new-post {
+      padding: 20px;
+      border-bottom: 1px solid gray;
+    }
+
+    #new-post textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: none;
+      outline: none;
+    }
+
+    #new-post input[type="file"] {
+      margin-top: 10px;
+    }
+
+    #new-post .status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    #new-post .status span {
+      color: grey;
+    }
+
+    #new-post .status button {
+      background-color: #1da1f2;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #new-post .status button:disabled {
+      background-color: #aaa;
+    }
+
+    #feed {
+      list-style: none;
+      padding: 20px;
+    }
+
+    .post {
+      background:black;
+      padding: 15px;
+      
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+      border: 1px solid gray;
+    }
+
+    .post:hover {
+      transform: translateY(-3px);
+    }
+
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: grey;
+    }
+    .post-content {
+      word-wrap: break-word; /* Garante quebra em palavras longas */
+  word-break: break-word; /* Permite quebra em palavras */
+  overflow-wrap: break-word; /* Alternativa moderna */
+      
+    }
+
+    .post-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .like {
+      cursor: pointer;
+      color: grey;
+      display: flex;
+      align-items: center;
+    }
+
+    .like.liked {
+      color: #e0245e;
+    }
+
+    .like span {
+      margin-left: 5px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+    }
+    .info-post{
+      display: flex;
+      border-bottom: 1px solid gray;
+    }
+    .info-post #new-post{
+      width: 90%;
+    }
+    .info-post img{
+      margin-top: 20px;
+      margin-left: 15px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .pos-header{
+      text-align: center;
+      color: #1da1f2;
+      border-bottom: 1px solid gray;
+    padding:10px;    }
+    textarea{
+      background: transparent;
+      border: none;
+      font-size: 15pt;
+      color: white;
+      outline: none; /* Remove o contorno ao focar */
+      resize: none; /* Impede redimensionamento, opcional */
+    }
+    svg{
+      margin: 25px 5px 15px 100px;
+      
+      width: 30px;
+      height: 30px;
+
+    }
+    svg:hover{
+      border-radius: 30%;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.11);
+    }
+    .img-header{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 20px 5px 15px 90px;
+    }
+    .custom-file-upload {
+        background-color:transparent;
+        
+    }
+
+    input[type="file"] {
+        display: none; /* Esconde o input de arquivo real */
+    }
+    .svg{
+      margin: 5px;
+
+    }
+    .header2{
+      display: flex;
+      padding: 5px;
+      height: 50px;
+      border-top: 1px solid gray;
+    }
+.icons{
+  background-color: transparent;
+  margin-left: 20px;
+  padding: 5px;
+  width: 70%;
+  margin-right: 15%;
+}
+    .header2 button{
+       width: 16%;
+       margin-right: 2%;
+       border-radius: 20px;
+       border: none;
+    }
+    .subscribe-btn{
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="pl">
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" x="0" y="0" viewBox="0 0 1226.37 1226.37" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M727.348 519.284 1174.075 0h-105.86L680.322 450.887 370.513 0H13.185l468.492 681.821L13.185 1226.37h105.866l409.625-476.152 327.181 476.152h357.328L727.322 519.284zM582.35 687.828l-47.468-67.894-377.686-540.24H319.8l304.797 435.991 47.468 67.894 396.2 566.721H905.661L582.35 687.854z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg>
+    <br>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" x="0" y="0" viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M58.474 28.965 34.521 6.37a3.68 3.68 0 0 0-5.048 0L5.535 28.96a4.851 4.851 0 0 0 3.325 8.387h1.812v15.253a6.041 6.041 0 0 0 6.034 6.034h7.469a3.682 3.682 0 0 0 3.678-3.678v-9.849a1.035 1.035 0 0 1 1.034-1.034h6.232a1.035 1.035 0 0 1 1.033 1.034v9.849a3.682 3.682 0 0 0 3.679 3.678h7.457A6.04 6.04 0 0 0 53.32 52.6V37.348h1.823a4.853 4.853 0 0 0 3.33-8.383zm-7.653 3.383a2.5 2.5 0 0 0-2.5 2.5v17.753a1.035 1.035 0 0 1-1.033 1.034h-6.136v-8.527a6.04 6.04 0 0 0-6.033-6.034h-6.232a6.041 6.041 0 0 0-6.034 6.034v8.527h-6.147a1.035 1.035 0 0 1-1.034-1.034V34.848a2.5 2.5 0 0 0-2.5-2.5h-3.94l22.765-21.487 22.777 21.487z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg>
+    <br>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="m27.707 26.293-5.969-5.969A9.95 9.95 0 0 0 24 14c0-5.514-4.486-10-10-10S4 8.486 4 14s4.486 10 10 10c2.398 0 4.6-.85 6.324-2.262l5.969 5.969a.999.999 0 1 0 1.414-1.414zM6 14c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8-8-3.589-8-8z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg> <br>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" x="0" y="0" viewBox="0 0 511.626 511.627" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M498.208 68.235c-8.945-8.947-19.701-13.418-32.261-13.418H45.682c-12.562 0-23.318 4.471-32.264 13.418C4.471 77.18 0 87.935 0 100.499v310.633c0 12.566 4.471 23.312 13.418 32.257 8.945 8.953 19.701 13.422 32.264 13.422h420.266c12.56 0 23.315-4.469 32.261-13.422 8.949-8.945 13.418-19.697 13.418-32.257V100.499c-.001-12.564-4.469-23.319-13.419-32.264zm-23.13 342.89c0 2.475-.903 4.616-2.714 6.424-1.81 1.81-3.949 2.706-6.42 2.706H45.679c-2.474 0-4.616-.896-6.423-2.706-1.809-1.808-2.712-3.949-2.712-6.424V191.858a167.121 167.121 0 0 0 19.7 18.843c51.012 39.209 91.553 71.374 121.627 96.5 9.707 8.186 17.607 14.561 23.697 19.13 6.09 4.571 14.322 9.185 24.694 13.846 10.373 4.668 20.129 6.991 29.265 6.991h.571c9.134 0 18.894-2.323 29.263-6.991 10.376-4.661 18.613-9.274 24.701-13.846 6.089-4.569 13.99-10.944 23.698-19.13 30.074-25.126 70.61-57.291 121.624-96.5a166.295 166.295 0 0 0 19.694-18.843v219.267zm0-303.205v3.14c0 11.229-4.421 23.745-13.271 37.543-8.851 13.798-18.419 24.792-28.691 32.974a43121.052 43121.052 0 0 0-114.495 90.506c-1.14.951-4.474 3.757-9.996 8.418-5.514 4.668-9.894 8.241-13.131 10.712-3.241 2.478-7.471 5.475-12.703 8.993-5.236 3.518-10.041 6.14-14.418 7.851-4.377 1.707-8.47 2.562-12.275 2.562h-.571c-3.806 0-7.895-.855-12.275-2.562-4.377-1.711-9.185-4.333-14.417-7.851-5.231-3.519-9.467-6.516-12.703-8.993-3.234-2.471-7.614-6.044-13.132-10.712-5.52-4.661-8.854-7.467-9.995-8.418a42000.437 42000.437 0 0 0-114.487-90.506c-27.981-22.076-41.969-49.106-41.969-81.083 0-2.472.903-4.615 2.712-6.421 1.809-1.809 3.949-2.714 6.423-2.714H465.95c1.52.855 2.854 1.093 3.997.715 1.143-.385 1.998.331 2.566 2.138.571 1.809 1.095 2.664 1.57 2.57.477-.096.764 1.093.859 3.571.089 2.473.137 3.718.137 3.718v3.849h-.001z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg> <br>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" x="0" y="0" viewBox="0 0 25 25" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="Layer 14"><path d="M12.5 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0-9a4 4 0 1 1-4 4 4 4 0 0 1 4-4zM13.56 13h-2.12A9.47 9.47 0 0 0 2 22.5a.5.5 0 0 0 .5.5h20a.55.55 0 0 0 .5-.56A9.46 9.46 0 0 0 13.56 13zM3 22a8.46 8.46 0 0 1 8.43-8h2.12A8.46 8.46 0 0 1 22 22z" fill="#fffafa" opacity="1" data-original="#000000"></path></g></g></svg>
+    <br>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M12 22.75A10.75 10.75 0 1 1 22.75 12 10.762 10.762 0 0 1 12 22.75zm0-20A9.25 9.25 0 1 0 21.25 12 9.26 9.26 0 0 0 12 2.75zM9.27 12a1.25 1.25 0 0 0-1.25-1.25h-.01A1.25 1.25 0 1 0 9.27 12zm4 0a1.25 1.25 0 0 0-1.25-1.25h-.01A1.25 1.25 0 1 0 13.27 12zm4 0a1.25 1.25 0 0 0-1.25-1.25h-.01A1.25 1.25 0 1 0 17.27 12z" fill="#ffffff" opacity="1" data-original="#000000"></path></g></svg>
+    <br>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M354.667 256c0 11.046-8.954 20-20 20H276v58.667c0 11.046-8.954 20-20 20s-20-8.954-20-20V276h-58.667c-11.046 0-20-8.954-20-20s8.954-20 20-20H236v-58.667c0-11.046 8.954-20 20-20s20 8.954 20 20V236h58.667c11.045 0 20 8.954 20 20zM512 148.372v215.256c0 37.396-14.563 72.553-41.005 98.995C466.783 465.595 432.014 512 363.628 512H148.372c-68.378 0-103.111-46.374-107.367-49.377C14.563 436.181 0 401.023 0 363.628V148.372c0-37.396 14.563-72.553 41.005-98.995C45.217 46.405 79.986 0 148.372 0h215.256c68.378 0 103.111 46.374 107.367 49.377C497.438 75.819 512 110.977 512 148.372zm-40 0c0-26.711-10.402-51.823-29.289-70.71C438.329 74.511 414.003 40 363.628 40H148.372c-50.105 0-74.849 34.617-79.083 37.662C50.402 96.549 40 121.661 40 148.372v215.256c0 26.711 10.402 51.823 29.289 70.71C73.671 437.489 97.997 472 148.372 472h215.256c50.105 0 74.849-34.617 79.083-37.662C461.598 415.451 472 390.339 472 363.628z" fill="#f3f3f3" opacity="1" data-original="#000000"></path></g></svg>
+    <br>
+     <img src="snap.jpg" alt="" class="img-header">
+  </div>
+
+  <div id="app">
+    <header>
+      <div class="you"><a href="">For you</a></div>
+      <div class="folow"><a href="">Follow</a></div>
+    </header>
+    
+    <div class="info-post">
+      <img src="snap.jpg" alt="">
+      <div id="new-post">
+        <textarea id="post-text" placeholder="What's happening?"></textarea>
+        
+        <div class="header2">
+          <div class="icons"> 
+             <label for="post-image" class="custom-file-upload">
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><linearGradient id="a" x1="2" x2="30" y1="16" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0fdcdd"></stop><stop offset="1" stop-color="#46a1e8"></stop></linearGradient><path fill="url(#a)" d="M27 4H5a3.003 3.003 0 0 0-3 3v18a3.003 3.003 0 0 0 3 3h22a3.003 3.003 0 0 0 3-3V7a3.003 3.003 0 0 0-3-3zM5 26a.988.988 0 0 1-.947-.737l4.363-5.818a1.004 1.004 0 0 1 1.507-.108l3.263 3.263-2.672 3.4zm23-1a1 1 0 0 1-1 1H13.058l8.336-10.61a1.007 1.007 0 0 1 1.493-.089L28 20.414zm0-7.414-3.7-3.699a3.017 3.017 0 0 0-4.479.268l-5.391 6.861-3.093-3.093a3.022 3.022 0 0 0-4.577.397L4 22V7a1.001 1.001 0 0 1 1-1h22a1 1 0 0 1 1 1zM12 8a3 3 0 1 0 3 3 3.003 3.003 0 0 0-3-3zm0 4a1 1 0 1 1 1-1 1.001 1.001 0 0 1-1 1z" opacity="1" data-original="url(#a)" class=""></path></g></svg>
+        </label>
+        <svg class="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g fill="#000"><path d="M17.61 21.71H6.39a4.11 4.11 0 0 1-4.11-4.11V6.38a4.11 4.11 0 0 1 4.11-4.11h11.22a4.11 4.11 0 0 1 4.11 4.11V17.6a4.11 4.11 0 0 1-4.11 4.11zM6.39 3.77a2.61 2.61 0 0 0-2.61 2.61V17.6a2.61 2.61 0 0 0 2.61 2.61h11.22a2.61 2.61 0 0 0 2.61-2.61V6.38a2.61 2.61 0 0 0-2.61-2.61z" fill="#1387e2" opacity="1" data-original="#000000" class=""></path><path d="M7.86 14.9a2.9 2.9 0 1 1 0-5.8.75.75 0 1 1 0 1.5 1.4 1.4 0 1 0 1.19 2.15h-.46a.75.75 0 1 1 0-1.5H10a.76.76 0 0 1 .75.75 2.91 2.91 0 0 1-2.89 2.9zM12.65 14.89a.74.74 0 0 1-.75-.75v-4.3a.75.75 0 1 1 1.5 0v4.3a.75.75 0 0 1-.75.75zM15.33 14.9a.76.76 0 0 1-.75-.75v-4.3a.75.75 0 1 1 1.5 0v4.3a.75.75 0 0 1-.75.75z" fill="#1387e2" opacity="1" data-original="#000000" class=""></path><path d="M17.93 12.81h-2.6a.75.75 0 1 1 0-1.5h2.6a.75.75 0 1 1 0 1.5zM17.93 10.6h-2.6a.75.75 0 1 1 0-1.5h2.6a.75.75 0 1 1 0 1.5z" fill="#1387e2" opacity="1" data-original="#000000" class=""></path></g></g></svg>
+        <svg class="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M256 0C114.841 0 0 114.841 0 256s114.841 256 256 256 256-114.841 256-256S397.159 0 256 0zm0 480C132.486 480 32 379.514 32 256S132.486 32 256 32s224 100.486 224 224-100.486 224-224 224zm129.712-131.39a154.035 154.035 0 0 1-259.424 0 16 16 0 0 1 26.936-17.276 122.035 122.035 0 0 0 205.552 0 16 16 0 1 1 26.936 17.276zM128.959 183.948a37.5 37.5 0 0 1 37.5-37.5h.007a37.5 37.5 0 1 1-37.5 37.5zm179.082 0a37.5 37.5 0 0 1 37.5-37.5h.006a37.5 37.5 0 1 1-37.5 37.5z" fill="#3b8fe0" opacity="1" data-original="#000000" class=""></path></g></svg>
+        <svg class="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M256 55.3c-70.6 0-128 57.4-128 128s57.4 128 128 128 128-57.4 128-128c0-70.5-57.4-128-128-128zm0 227.8c-55 0-99.8-44.8-99.8-99.8S201 83.5 256 83.5s99.8 44.8 99.8 99.8c0 55.1-44.8 99.8-99.8 99.8z" fill="#1ba7ef" opacity="1" data-original="#000000"></path><path d="M256 2C156 2 74.7 83.3 74.7 183.3c0 96 163.1 312.1 170.1 321.2 5.3 7.3 17.1 7.1 22.5 0 6.9-9.2 170.1-225.2 170.1-321.2C437.3 83.3 356 2 256 2zm0 470.4c-51.3-70-153.1-222.5-153.1-289.1 0-84.4 68.7-153.1 153.1-153.1s153.1 68.7 153.1 153.1c0 66.6-101.8 219.1-153.1 289.1z" fill="#1ba7ef" opacity="1" data-original="#000000"></path><path d="M309 169.2h-38.9v-38.9c0-7.8-6.3-14.1-14.1-14.1s-14.1 6.3-14.1 14.1v38.9H203c-7.8 0-14.1 6.3-14.1 14.1s6.3 14.1 14.1 14.1h38.9v38.9c0 7.8 6.3 14.1 14.1 14.1s14.1-6.3 14.1-14.1v-38.9H309c7.8 0 14.1-6.3 14.1-14.1s-6.3-14.1-14.1-14.1z" fill="#1ba7ef" opacity="1" data-original="#000000"></path></g></svg>
+        <svg class="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 682.667 682.667" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z" fill="#2788f9" opacity="1" data-original="#000000"></path></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="M0 0v233.498c0 9.149 7.418 16.567 16.568 16.567h49.699" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(57.2 221.302)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0h-49.698c-9.151 0-16.569 7.418-16.569 16.567v18.129" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(123.466 156.6)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0h49.699c9.151 0 16.569-7.418 16.569-16.567V-298.2c0-9.15-7.418-16.568-16.569-16.568H0" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(388.533 471.367)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0h198.801" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(156.6 471.367)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0h-50.726c-9.15 0-16.568 7.417-16.568 16.567v36.492" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(124.493 123.467)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0v-66.266c0-9.15-7.418-16.567-16.568-16.567h-49.7" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(454.8 206.3)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0h397.6" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(57.2 405.1)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0h397.6" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(57.2 371.967)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0c0-9.149 7.417-16.566 16.566-16.566 9.15 0 16.567 7.417 16.567 16.566v33.134c0 9.149-7.417 16.566-16.567 16.566C7.417 49.7 0 42.283 0 33.134Z" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(355.4 454.8)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0c0-9.149 7.417-16.566 16.566-16.566 9.15 0 16.567 7.417 16.567 16.566v33.134c0 9.149-7.417 16.566-16.567 16.566C7.417 49.7 0 42.283 0 33.134Z" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(123.467 454.8)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M123.467 305.7H90.333v33.133h33.134zM198.017 305.7h-33.134v33.133h33.134zM347.117 305.7h-33.134v33.133h33.134zM272.566 305.7h-33.133v33.133h33.133zM421.667 305.7h-33.134v33.133h33.134zM123.467 239.434H90.333v33.133h33.134zM421.667 239.434h-33.134v33.133h33.134z" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0c0 73.196 59.337 132.533 132.533 132.533 73.196 0 132.533-59.337 132.533-132.533 0-73.196-59.337-132.533-132.533-132.533C59.337-132.533 0-73.196 0 0Z" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(123.467 140.033)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0c0 54.897 44.502 99.4 99.399 99.4 54.898 0 99.4-44.503 99.4-99.4 0-54.896-44.502-99.399-99.4-99.399C44.502-99.399 0-54.896 0 0Z" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(156.6 140.033)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0h33.134" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(272.566 140.033)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0v-49.699" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(256 206.3)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path><path d="M0 0c0-9.149-7.417-16.566-16.566-16.566-9.15 0-16.567 7.417-16.567 16.566s7.417 16.566 16.567 16.566C-7.417 16.566 0 9.149 0 0Z" style="stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(272.566 140.033)" fill="none" stroke="#2788f9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1"></path></g></g></svg>
+        <svg class="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M464.865 369.533H175.666c-25.988 0-47.133 21.144-47.133 47.133s21.145 47.134 47.133 47.134h289.199c25.99 0 47.135-21.145 47.135-47.134s-21.145-47.133-47.135-47.133zM464.865 208.866H175.666c-25.988 0-47.133 21.145-47.133 47.134s21.145 47.133 47.133 47.133h289.199c25.99 0 47.135-21.144 47.135-47.133s-21.145-47.134-47.135-47.134zM175.666 142.467h289.199c25.99 0 47.135-21.145 47.135-47.134S490.855 48.2 464.865 48.2H175.666c-25.988 0-47.133 21.144-47.133 47.133s21.145 47.134 47.133 47.134zM47.134 48.2C21.145 48.2 0 69.344 0 95.333s21.145 47.134 47.134 47.134 47.132-21.145 47.132-47.134S73.123 48.2 47.134 48.2zM47.134 208.866C21.145 208.866 0 230.011 0 256s21.145 47.133 47.134 47.133S94.266 281.989 94.266 256s-21.143-47.134-47.132-47.134zM47.134 369.533C21.145 369.533 0 390.677 0 416.666S21.145 463.8 47.134 463.8s47.132-21.145 47.132-47.134-21.143-47.133-47.132-47.133z" fill="#1abaec" opacity="1" data-original="#000000" class=""></path></g></svg>
+       </div>
+       <button id="post-btn" disabled>Post</button>
+        </div>
+        
+        <input type="file" id="post-image">
+        <div class="status">
+          characters left <span id="char-count">280</span>
+
+        </div>
+
+      </div>
+
+  
+    </div>
+    <div class="pos-header">
+      Show 6 posts
+    </div>
+    <div id="feed">
+      
+             <div class="post">
+              <div class="post-header">
+                <span>@maria</span>
+                <span>2023-02-25 18:00</span>
+              </div>
+              <div class="post-content">#mirantes.io</div>
+              <div class="post-actions">
+                <div class="like" onclick="toggleLike(this)">
+                  <i class="fas fa-heart"></i><span> 0 </span>
+
+                </div>
+                <i class="fas fa-comment"></i><span>10 </span>
+                <i class="fas fa-eye"></i><span>10 </span>
+                <i class="fas fa-share"></i><span>10 </span>
+              </div>
+      
+             </div>   
+      
+      </div>
+    
+  </div>
+
+  <div class="pd">
+    <div class="search">
+      <input type="search" name="search" placeholder="Pesquisar" id="search">
+    </div>
+    
+    <div class="subscribe"> 
+      <h3>subscribe to premiun</h3>
+      <h5>Subscribe to unlock new features and if eligible, receive a share of revenue.</h5>
+      <button class="subscribe-btn">Subscribe</button>
+    </div>
+    
+      
+      <div class="whats">
+        <h3>oque esta acontecendo!?</h3>
+        <div class="info-box">
+         <div class="text">
+          <small>Leanding</small>
+          <h4>Informação 1</h4>
+         </div>
+          <div class="options">● ● ●</div>
+        </div>
+        <div class="info-box">
+          <div class="text">
+            <small>Leanding</small>
+            <h4>Informação 2</h4>
+           </div>
+          <div class="options">● ● ●</div>
+        </div>
+        <div class="info-box">
+          <div class="text">
+            <small>Leanding</small>
+            <h4>Informação 3</h4>
+           </div>
+          <div class="options">● ● ●</div>
+        </div>
+      
+      
+<a href="" class="see-more">See more</a>
+      <footer>
+        
+      </footer>
+  </div>
+
+ <script>
+  const postText = document.getElementById('post-text');
+  const postBtn = document.getElementById('post-btn');
+  const charCount = document.getElementById('char-count');
+  const feed = document.getElementById('feed');
+  const postImageInput = document.getElementById('post-image');
+  const maxChars = 280;
+
+  // Array para armazenar os posts (você pode substituir isso por uma chamada de API)
+  let userPosts = [];
+
+  postText.addEventListener('input', () => {
+    const remaining = maxChars - postText.value.length;
+    charCount.textContent = remaining;
+    postBtn.disabled = postText.value.trim() === '' || remaining < 0;
+    charCount.style.color = remaining < 50 ? 'orange' : 'grey';
+    if (remaining < 0) charCount.style.color = 'red';
+  });
+
+  postBtn.addEventListener('click', () => {
+    if (postText.value.trim() === '') return;
+
+    const post = document.createElement('li');
+    post.className = 'post';
+
+    const imageFile = postImageInput.files[0];
+    let imageTag = '';
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        imageTag = `<img src="${e.target.result}" alt="Post Image" style="max-width: 100%; margin-top: 10px;">`;
+        post.innerHTML = `
+          <div class="post-header">
+            <span>mauro batista</span>
+            <span>${new Date().toLocaleString()}</span>
+          </div>
+          <div class="post-content">${postText.value}</div>
+          ${imageTag}
+          <div class="post-actions">
+            <div class="like" onclick="toggleLike(this)">
+              <i class="heart">&#9829;</i><span>0</span>
+            </div>
+            
+            
+          </div>
+        `;
+        feed.prepend(post);
+        userPosts.unshift(post); // Adiciona o post no começo do array
+      };
+      reader.readAsDataURL(imageFile);
+    } else {
+      post.innerHTML = `
+        <div class="post-header">
+          <span>@maurobaptista</span>
+          <span>${new Date().toLocaleString()}</span>
+        </div>
+        <div class="post-content">${postText.value}</div>
+        <div class="post-actions">
+          <div class="like" onclick="toggleLike(this)">
+            <i class="heart">&#9829;</i><span>0</span>
+          </div>
+                <i class="fas fa-comment"></i><span>10 </span>
+                <i class="fas fa-eye"></i><span>10 </span>
+                <i class="fas fa-share"></i><span>10 </span>
+        </div>
+        
+      `;
+      feed.prepend(post);
+      userPosts.unshift(post); // Adiciona o post no começo do array
+    }
+    postText.value = '';
+    postImageInput.value = '';
+    charCount.textContent = maxChars;
+    postBtn.disabled = true;
+    charCount.style.color = 'grey';
+    post.style.opacity = '0';
+    setTimeout(() => post.style.opacity = '1', 10);
+  });
+
+  function toggleLike(element) {
+    const liked = element.classList.toggle('liked');
+    const countSpan = element.querySelector('span');
+    let count = parseInt(countSpan.textContent);
+    count = liked ? count + 1 : count - 1;
+    countSpan.textContent = count;
+  }
+
+  // Função para carregar posts antigos
+  function loadMorePosts() {
+    const loader = document.createElement('li');
+    loader.textContent = 'Aguardar os novos POST...';
+    loader.style.textAlign = 'center';
+    feed.appendChild(loader);
+
+    setTimeout(() => {
+      // Carregar os 5 posts mais antigos
+      const postsToLoad = userPosts.slice(0, 5); // Pega os 5 primeiros posts (os mais antigos)
+      postsToLoad.forEach(post => feed.appendChild(post));
+
+      // Remove o loader
+      loader.remove();
+
+      // Remove os posts carregados do array (para não exibir novamente)
+      userPosts = userPosts.slice(5);
+    }, 1000);
+  }
+
+  document.getElementById('app').addEventListener('scroll', function () {
+    if (this.scrollTop + this.clientHeight >= this.scrollHeight) {
+      loadMorePosts();
+      
+    }
+  });
+</script>
+
+
+</body>
+</html>
