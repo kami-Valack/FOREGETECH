@@ -543,6 +543,66 @@ small{
   </div>
 
  <script>
+  (function () {
+  const body = document.body;
+
+  // Define breakpoints for responsive layouts
+  const breakpoints = {
+    mobile: 480,
+    tablet: 768,
+    desktop: 1024,
+    largeDesktop: 1440,
+  };
+
+  // Function to adjust layout based on screen width
+  function adjustLayout() {
+    const width = window.innerWidth;
+
+    // Reset classes before applying new ones
+    body.classList.remove("mobile-view", "tablet-view", "desktop-view", "large-desktop-view");
+
+    if (width <= breakpoints.mobile) {
+      body.classList.add("mobile-view");
+    } else if (width <= breakpoints.tablet) {
+      body.classList.add("tablet-view");
+    } else if (width <= breakpoints.desktop) {
+      body.classList.add("desktop-view");
+    } else {
+      body.classList.add("large-desktop-view");
+    }
+
+    console.log(`Current viewport width: ${width}px`);
+  }
+
+  // Throttle function to improve performance
+  function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function () {
+      const context = this;
+      const args = arguments;
+      if (!lastRan) {
+        func.apply(context, args);
+        lastRan = Date.now();
+      } else {
+        clearTimeout(lastFunc);
+        lastFunc = setTimeout(function () {
+          if (Date.now() - lastRan >= limit) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          }
+        }, limit - (Date.now() - lastRan));
+      }
+    };
+  }
+
+  // Listen for window resize and adjust layout with throttling
+  window.addEventListener("resize", throttle(adjustLayout, 150));
+
+  // Initial layout adjustment
+  adjustLayout();
+})();
+
   const postText = document.getElementById('post-text');
   const postBtn = document.getElementById('post-btn');
   const charCount = document.getElementById('char-count');
